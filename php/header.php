@@ -21,8 +21,8 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
-            <li class="nav-item text-center">
-              <h3>CBR - Theorie examen: Rijbewijs B</h3>
+            <li class="nav-item">
+              <h3>CBR - Theorie examen: Rijbewijs C</h3>
             </li>
           </ul>
         </div>
