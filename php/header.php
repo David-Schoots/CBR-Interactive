@@ -38,7 +38,7 @@
     <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
       <ul class="navbar-nav mb-2 mb-lg-0">
         <li class="nav-item">
-          <h4 class="h4 text-center">Theorie examen: Rijbewijs B</h4>
+          <h4 class="h4 text-center text-white">Theorie examen: Rijbewijs B</h4>
         </li>
       </ul>
     </div>
