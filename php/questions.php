@@ -33,11 +33,12 @@
                     <h3>Wie heeft er Voorrang?</h3>
                 </div>
                 <div class="d-flex flex-column justify-content-center align-items-center mb-3">
-                    <button class="btn btn-primary  mb-4" style="width: 50%;"><span class="icon"><i class="bi bi-app"></i></span><span class="text">Rode Auto</span></button>
-                    <button class="btn btn-primary  mb-4" style="width: 50%;"><span class="icon"><i class="bi bi-app"></i></span><span class="text">Blauwe Auto</span></button>
-                    <button class="btn btn-primary  mb-4" style="width: 50%;"><span class="icon"><i class="bi bi-app"></i></span><span class="text">Witte Auto</span></button>
-                    <button class="btn btn-primary  mb-4" style="width: 50%;"><span class="icon"><i class="bi bi-app"></i></span><span class="text">Voetganger</span></button>               
+                    <button class="btn btn-primary  mb-4" style="width: 50%;"><span class="icon"><i class="bi bi-app"></i><span class="slash" style="">|</span></span><span class="text">Rode Auto</span></button>
+                    <button class="btn btn-primary  mb-4" style="width: 50%;"><span class="icon"><i class="bi bi-app"></i><span class="slash">|</span></span><span class="text">Blauwe Auto</span></button>
+                    <button class="btn btn-primary  mb-4" style="width: 50%;"><span class="icon"><i class="bi bi-app"></i><span class="slash">|</span></span><span class="text">Witte Auto</span></button>
+                    <button class="btn btn-primary  mb-4" style="width: 50%;"><span class="icon"><i class="bi bi-app"></i><span class="slash">|</span></span><span class="text">Voetganger</span></button>               
                 </div>
+
             </div>
          </div>
     </div>
