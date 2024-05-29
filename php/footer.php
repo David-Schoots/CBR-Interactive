@@ -1,5 +1,5 @@
 <!-- Copyright -->
-<footer class="text-center text-lg-start fixed-bottom text-white" style="background:#009ddf"> 
+<footer class="text-center text-lg-start text-white" style="background:#009ddf"> 
     
     <!-- Copyright -->
   <div class="text-center p-3">
