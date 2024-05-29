@@ -1,0 +1,14 @@
+.btn-primary {
+  position: relative;
+}
+
+.btn-primary .icon {
+  position: absolute;
+  left: 10px; /* Pas dit aan naar jouw voorkeur */
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.btn-primary .text {
+  margin-left: 30px; /* Pas dit aan om de ruimte tussen het icoon en de tekst te vergroten of te verkleinen */
+}

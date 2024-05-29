@@ -6,6 +6,8 @@
     case "questions":
       $title = "Questions";
       $logo = "../assets/logo/cbr-logo.png";
+      echo "<script src=\"../js/button.js\" defer></script>";
+      echo "<link rel=\"stylesheet\" href=\"../css/overide.css\" >";
       break;
   default:
       $logo = "assets/logo/cbr-logo.png";
@@ -22,7 +24,8 @@
     <title>CBR - Theorie examen: Rijbewijs B | <?php echo $title ?></title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <!-- ICONS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.0/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
   </head>
   <body class = "vh-100 d-flex flex-column justify-content-between overflow-hidden">
 

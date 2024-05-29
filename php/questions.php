@@ -33,14 +33,13 @@
                     <h3>Wie heeft er Voorrang?</h3>
                 </div>
                 <div class="d-flex flex-column justify-content-center align-items-center mb-3">
-                    <input class="btn btn-primary mb-4" type="button" value="Rode Auto" style="width: 50%;">
-                    <input class="btn btn-primary mb-4" type="button" value="Blauwe Auto" style="width: 50%;">
-                    <input class="btn btn-primary mb-4" type="button" value="Witte Auto" style="width: 50%;">
-                    <input class="btn btn-primary mb-4" type="button" value="Voetganger" style="width: 50%;">
+                    <button class="btn btn-primary  mb-4" style="width: 50%;"><span class="icon"><i class="bi bi-app"></i></span><span class="text">Rode Auto</span></button>
+                    <button class="btn btn-primary  mb-4" style="width: 50%;"><span class="icon"><i class="bi bi-app"></i></span><span class="text">Blauwe Auto</span></button>
+                    <button class="btn btn-primary  mb-4" style="width: 50%;"><span class="icon"><i class="bi bi-app"></i></span><span class="text">Witte Auto</span></button>
+                    <button class="btn btn-primary  mb-4" style="width: 50%;"><span class="icon"><i class="bi bi-app"></i></span><span class="text">Voetganger</span></button>               
                 </div>
-
             </div>
-        </div>
+         </div>
     </div>
 
 <?php
