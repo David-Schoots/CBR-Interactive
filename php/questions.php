@@ -32,12 +32,13 @@
                 <div class="mb-3 text-center">
                     <h3>Wie heeft er Voorrang?</h3>
                 </div>
-                <div class="d-flex mb-3">
-                    <input class="btn btn-primary" type="button" value="Antwoord 1">
-                    <input class="btn btn-primary" type="button" value="Antwoord 2">
-                    <input class="btn btn-primary" type="button" value="Antwoord 3">
-                    <input class="btn btn-primary" type="button" value="Antwoord 4">
+                <div class="d-flex flex-column justify-content-center align-items-center mb-3">
+                    <input class="btn btn-primary mb-4" type="button" value="Rode Auto" style="width: 50%;">
+                    <input class="btn btn-primary mb-4" type="button" value="Blauwe Auto" style="width: 50%;">
+                    <input class="btn btn-primary mb-4" type="button" value="Witte Auto" style="width: 50%;">
+                    <input class="btn btn-primary mb-4" type="button" value="Voetganger" style="width: 50%;">
                 </div>
+
             </div>
         </div>
     </div>
