@@ -1,77 +1,39 @@
-<?php 
-include "config.php";
-$_SESSION["gevaarHerkenning"] = [];
-    $_SESSION["kennis"] = [];
-        $_SESSION["inzicht"] = [];
-
-$_SESSION["correctFalseQuestions"] = [];
-$questionCount = 0;
-
-$sqli_question = $conn->prepare("SELECT id FROM cbr_question WHERE category='J' ORDER BY RAND() LIMIT 25");
-$sqli_question->bind_result($id);
-
-if($sqli_question === false) {
-    echo mysqli_error($conn); 
-    } else{
-        if($sqli_question->execute()) { 
-            while($sqli_question->fetch()){ 
-                $_SESSION["gevaarHerkenning"][$questionCount] = $id;
-                $questionCount++;
-            }
-        }
-        $sqli_question->close();
-        
-    }
-
-$sqli_question = $conn->prepare("SELECT id FROM cbr_question WHERE category='A' OR category='B' OR category='C' OR category='D' OR category='E' OR category='F' OR category='G' OR category='K' OR category='L' OR category='R' OR category='S' OR category='T' OR category='U' OR category='V' OR category='W' OR category='X' OR category='Y' ORDER BY RAND() LIMIT 12");
-$sqli_question->bind_result($id);
-
-if($sqli_question === false) {
-    echo mysqli_error($conn); 
-    } else{
-        if($sqli_question->execute()) { 
-         
-            while($sqli_question->fetch()){ 
-                $_SESSION["kennis"][$questionCount] = $id;
-                $questionCount++;
-            }
-        }
-        $sqli_question->close();
-       
-    }
-
-$sqli_question = $conn->prepare("SELECT id FROM cbr_question WHERE category='I' OR category='M' OR category='N' OR category='O' OR category='P' OR category='Q' OR category='Z' ORDER BY RAND() LIMIT 28");
-$sqli_question->bind_result($id);
-
-if($sqli_question === false) {
-    echo mysqli_error($conn); 
-    } else{
-        if($sqli_question->execute()) { 
-       
-            while($sqli_question->fetch()){ 
-                $_SESSION["inzicht"][$questionCount] = $id;
-                $questionCount++;
-            }
-        }
-        $sqli_question->close();
-       
-    }
-
-?>
-<?php
-    include_once("header.php");
-?>
-
-
-<div class="container">
-    <div id="containerTest">
 <?php
         include "config.php";
 
-        $offset = 0;
+        $offset = $_GET["nextQuestion"];
+        $valueAnswer = $_GET["answerValue"];
+        $correctValue = $_GET["correctValue"];
+        $pastQuestion = $_GET["pastQuestionId"];
 
-        $sqli_question = $conn->prepare("SELECT id,type,image,question FROM cbr_question WHERE id = ? LIMIT 1");
-        $sqli_question->bind_param("i", $_SESSION["gevaarHerkenning"][$offset]);
+        if($valueAnswer == $correctValue){
+        
+            $_SESSION["vragen"][$offset]["goedFout"] = true;
+            $_SESSION["vragen"][$offset]["id"] = $pastQuestion;
+        } else{
+            
+            $_SESSION["vragen"][$offset]["goedFout"] = false;
+            $_SESSION["vragen"][$offset]["id"] = $pastQuestion;
+        }
+
+
+
+        if($offset < 25) {
+            $sqli_question = $conn->prepare("SELECT id,type,image,question FROM cbr_question WHERE id = ? LIMIT 1");
+            $sqli_question->bind_param("i", $_SESSION["gevaarHerkenning"][$offset]);
+
+            $typeVraag = "Gevaarherkenning";
+        } else if($offset >= 25 && $offset < 37) {
+            $sqli_question = $conn->prepare("SELECT id,type,image,question FROM cbr_question WHERE id = ? LIMIT 1");
+            $sqli_question->bind_param("i", $_SESSION["kennis"][$offset]);
+            
+            $typeVraag = "Kennis";
+        }else if($offset >= 37 && $offset < 65) {
+            $sqli_question = $conn->prepare("SELECT id,type,image,question FROM cbr_question WHERE id = ? LIMIT 1");
+            $sqli_question->bind_param("i", $_SESSION["inzicht"][$offset]);
+
+            $typeVraag = "Inzicht";
+        }
 
         if($sqli_question === false) {
             echo mysqli_error($conn); 
@@ -128,15 +90,6 @@ if($sqli_question === false) {
                                         </div>
                                     </div>
                                 </div>
-                                </div>
-                                <div class="text-center">  
-                                    <button onclick="clickButton('q3')" class="btn btn-primary mb-2" id="N" style="width: 20%;">
-                                        <i class="bi bi-arrow-left">Vorig</i>
-                                    </button>
-                                    <button onclick="clickButton('q3')" class="btn btn-primary mb-2" disabled ="P" style="width: 20%;">
-                                        <i class="bi bi-arrow-right">Next</i>
-                                    </button>
-                                </div>
                             </div>
                        <?php }
                         }
@@ -147,11 +100,5 @@ if($sqli_question === false) {
                 } 
             $sqli_question->close();
             }
+        
     ?>    
-
-     
-
-
-<?php
-    include_once("footer.php");
-?>

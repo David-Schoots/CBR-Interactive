@@ -9,6 +9,7 @@
       echo "<script src=\"../js/button.js\" defer></script>";
       echo "<link rel=\"stylesheet\" href=\"../css/overide.css\" >";
       echo "<script src=\"../js/timer.js\" defer></script>";
+      echo "<script src=\"../js/script.js\" defer></script>";
       break;
     case "resultaat":
       $title = "Eind Resultaat";
