@@ -27,3 +27,8 @@
   color: white; /* Optioneel, om het pictogram wit te maken op de groene achtergrond */
   display: inline-block; /* Zorg ervoor dat het element inline-block is om de padding goed weer te geven */
 }
+
+/* positie van de knop om in het midden te krijgen */
+.btn-primary {
+  margin: 30px;
+}
