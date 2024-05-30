@@ -34,6 +34,18 @@
             </div>
          </div>
     </div>
+    <div class="text-center">  
+        <button onclick="clickButton('q3')" class="btn btn-primary mb-2" id="N" style="width: 20%;">
+            <i class="bi bi-arrow-left">Vorig</i>
+        </button>
+        <button onclick="clickButton('q3')" class="btn btn-primary mb-2" disabled ="P" style="width: 20%;">
+            <i class="bi bi-arrow-right">Next</i>
+        </button>
+    </div>
+    
+</button>
+
+     
 
 
 <?php
