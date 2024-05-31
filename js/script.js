@@ -33,6 +33,7 @@ function submitQuestion(nieuweOffset,answerValue,correctValue,id) {
         }
       }, 200);
     
+      totaalVraagen = offset + 1;
 
     huidigeVraag = document.getElementById("vraagHuidig");
     huidigeVraag.innerHTML = totaalVraagen + "/65";
