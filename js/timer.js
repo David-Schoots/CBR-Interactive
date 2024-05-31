@@ -20,6 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (remaining <= 0) {
       clearInterval(interval);
       timer.textContent = "0m 00s";
+      window.location.href = "../php/resultaat.php";
     }
   }, 1000);
 });
