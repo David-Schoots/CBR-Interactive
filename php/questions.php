@@ -1,10 +1,23 @@
 <?php 
 include "config.php";
+
+$offset = 0;
+
 $_SESSION["gevaarHerkenning"] = [];
     $_SESSION["kennis"] = [];
         $_SESSION["inzicht"] = [];
+            $_SESSION["voornaam"] = [];
+                $_SESSION["achternaam"] = [];
+
+if(isset($_POST['submitButton'])) {
+    $_SESSION["voornaam"] = $_POST['voornaam'];
+    $_SESSION["achternaam"] = $_POST['achternaam'];
+}
 
 $_SESSION["correctFalseQuestions"] = [];
+
+$_SESSION["overigeVragen"] = [];
+$_SESSION["overigeVragen"] = 1;
 $questionCount = 0;
 
 $sqli_question = $conn->prepare("SELECT id FROM cbr_question WHERE category='J' ORDER BY RAND() LIMIT 25");
@@ -68,7 +81,7 @@ if($sqli_question === false) {
 <?php
         include "config.php";
 
-        $offset = 0;
+        
 
         $sqli_question = $conn->prepare("SELECT id,type,image,question FROM cbr_question WHERE id = ? LIMIT 1");
         $sqli_question->bind_param("i", $_SESSION["gevaarHerkenning"][$offset]);
@@ -129,14 +142,7 @@ if($sqli_question === false) {
                                     </div>
                                 </div>
                                 </div>
-                                <div class="text-center">  
-                                    <button onclick="clickButton('q3')" class="btn btn-primary mb-2" id="N" style="width: 20%;">
-                                        <i class="bi bi-arrow-left">Vorig</i>
-                                    </button>
-                                    <button onclick="clickButton('q3')" class="btn btn-primary mb-2" disabled ="P" style="width: 20%;">
-                                        <i class="bi bi-arrow-right">Next</i>
-                                    </button>
-                                </div>
+                                
                             </div>
                        <?php }
                         }

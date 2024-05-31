@@ -1,6 +1,7 @@
 <?php
         include "config.php";
 
+
         $offset = $_GET["nextQuestion"];
         $valueAnswer = $_GET["answerValue"];
         $correctValue = $_GET["correctValue"];
